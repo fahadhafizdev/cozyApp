@@ -5,10 +5,10 @@ import 'package:provider/provider.dart';
 
 class BottomNavbarItem extends StatelessWidget {
   final String imageUrl;
-  final bool isActive;
+
   final int index;
 
-  BottomNavbarItem({this.imageUrl, this.isActive, this.index});
+  BottomNavbarItem({this.imageUrl, this.index});
 
   @override
   Widget build(BuildContext context) {

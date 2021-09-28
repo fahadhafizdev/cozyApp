@@ -47,22 +47,18 @@ class MainPage extends StatelessWidget {
             children: [
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_home.png',
-                isActive: true,
                 index: 0,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_mail.png',
-                isActive: false,
                 index: 1,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_card.png',
-                isActive: false,
                 index: 2,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_love.png',
-                isActive: false,
                 index: 3,
               ),
             ],
