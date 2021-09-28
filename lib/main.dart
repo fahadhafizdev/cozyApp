@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       create: (context) => SpaceProvider(),
       child: MaterialApp(
         title: 'Cozy',
+        debugShowCheckedModeBanner: false,
         home: SplashPage(),
       ),
     );
