@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pencarian_kos/pages/favorit_page.dart';
 import 'package:pencarian_kos/pages/home_page.dart';
 import 'package:pencarian_kos/pages/mail_page.dart';
+import 'package:pencarian_kos/pages/wallet_page.dart';
 import 'package:pencarian_kos/providers/page_provider.dart';
 import 'package:pencarian_kos/theme.dart';
 import 'package:pencarian_kos/widgets/bottom_navbar_item.dart';
@@ -17,6 +19,10 @@ class MainPage extends StatelessWidget {
           return HomePage();
         case 1:
           return MailPage();
+        case 2:
+          return WalletPage();
+        case 3:
+          return FavoritPage();
 
         default:
           return HomePage();
@@ -52,12 +58,12 @@ class MainPage extends StatelessWidget {
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_card.png',
                 isActive: false,
-                index: 1,
+                index: 2,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_love.png',
                 isActive: false,
-                index: 1,
+                index: 3,
               ),
             ],
           ),
