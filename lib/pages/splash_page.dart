@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pencarian_kos/pages/home_page.dart';
+import 'package:pencarian_kos/pages/main_page.dart';
 import 'package:pencarian_kos/theme.dart';
 
 class SplashPage extends StatelessWidget {
@@ -60,7 +61,7 @@ class SplashPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => HomePage(),
+                            builder: (context) => MainPage(),
                           ),
                         );
                       },
