@@ -26,9 +26,10 @@ class BottomNavbarItem extends StatelessWidget {
             imageUrl,
             width: 26,
             height: 26,
+            color: (index == pageProvider.number) ? purpleColor : greyColor,
           ),
           Spacer(),
-          isActive
+          (index == pageProvider.number)
               ? Container(
                   width: 30,
                   height: 2,
