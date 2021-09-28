@@ -1,35 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:pencarian_kos/providers/page_provider.dart';
 import 'package:pencarian_kos/theme.dart';
+import 'package:provider/provider.dart';
 
 class BottomNavbarItem extends StatelessWidget {
   final String imageUrl;
   final bool isActive;
+  final int index;
 
-  BottomNavbarItem({this.imageUrl, this.isActive});
+  BottomNavbarItem({this.imageUrl, this.isActive, this.index});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Spacer(),
-        Image.asset(
-          imageUrl,
-          width: 26,
-          height: 26,
-        ),
-        Spacer(),
-        isActive
-            ? Container(
-                width: 30,
-                height: 2,
-                decoration: BoxDecoration(
-                    color: purpleColor,
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(1000),
-                    )),
-              )
-            : Container()
-      ],
+    var pageProvider = Provider.of<PageProvider>(context);
+
+    return GestureDetector(
+      onTap: () {
+        pageProvider.number = index;
+        print(index);
+      },
+      child: Column(
+        children: [
+          Spacer(),
+          Image.asset(
+            imageUrl,
+            width: 26,
+            height: 26,
+          ),
+          Spacer(),
+          isActive
+              ? Container(
+                  width: 30,
+                  height: 2,
+                  decoration: BoxDecoration(
+                      color: purpleColor,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(1000),
+                      )),
+                )
+              : Container()
+        ],
+      ),
     );
   }
 }

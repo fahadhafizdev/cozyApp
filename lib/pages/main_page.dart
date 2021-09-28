@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:pencarian_kos/pages/home_page.dart';
+import 'package:pencarian_kos/pages/mail_page.dart';
+import 'package:pencarian_kos/providers/page_provider.dart';
 import 'package:pencarian_kos/theme.dart';
 import 'package:pencarian_kos/widgets/bottom_navbar_item.dart';
+import 'package:provider/provider.dart';
 
 class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var pageProvider = Provider.of<PageProvider>(context);
+
     Widget buildContent(int currentIndex) {
       switch (currentIndex) {
         case 0:
           return HomePage();
+        case 1:
+          return MailPage();
 
         default:
           return HomePage();
@@ -35,18 +42,22 @@ class MainPage extends StatelessWidget {
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_home.png',
                 isActive: true,
+                index: 0,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_mail.png',
                 isActive: false,
+                index: 1,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_card.png',
                 isActive: false,
+                index: 1,
               ),
               BottomNavbarItem(
                 imageUrl: 'assets/images/icon_love.png',
                 isActive: false,
+                index: 1,
               ),
             ],
           ),
@@ -57,7 +68,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          buildContent(0),
+          buildContent(pageProvider.number),
           customNavigation(),
         ],
       ),
